@@ -93,6 +93,13 @@ function showWinner(winner, computerChoice) {
     modal.style.display = 'block';
 }
 
+var end = new Audio();
+end.src = 'js/end.wav';
+//sound
+function endsound() {
+    end.play();
+}
+
 
 // Restart game
 function restartGame() {
@@ -113,6 +120,7 @@ function finalwinner(scoreboard) {
         <p>Your Score <strong>${scoreboard.player}</strong></p>
         <p>Computer Score <strong>${scoreboard.computer}</strong></p>
       `;
+        endsound();
         restartGame();
     } else if (scoreboard.computer === Max) {
         result.innerHTML = `
@@ -120,6 +128,7 @@ function finalwinner(scoreboard) {
         <p>Your Score <strong>${scoreboard.player}</strong></p>
         <p>Computer Score <strong>${scoreboard.computer}</strong></p>
       `;
+        endsound();
         restartGame();
     }
 }
